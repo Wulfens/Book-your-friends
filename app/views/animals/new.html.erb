@@ -1,0 +1,10 @@
+<h1>Add A Best Friend </h1>
+
+<%= simple_form_for(@animal) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species %>
+  <%= f.input :race %>
+  <%= f.input :description %>
+  <%= f.input :price_per_hour %>
+  <%= f.submit "Add My Friend", class: "btn btn-primary" %>
+<% end %>
