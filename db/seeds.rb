@@ -9,6 +9,7 @@ require 'faker'
 
 
 User.create(email: "test@hotmal.fr", password: "cat123", first_name: "Jean" ,last_name: "Dog")
+User.create(email: "user2@hotmail.fr", password: "cat123", first_name: "Hot" ,last_name: "Dog")
 20.times do 
   Animal.create([{
     user: User.first,
