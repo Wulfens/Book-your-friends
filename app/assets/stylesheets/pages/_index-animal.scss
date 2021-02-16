@@ -24,6 +24,7 @@ h1, h2
 .card-animal
 {
   border: 1px solid rgb(230, 230, 230);
+  color: #F3F3F3;
   border-radius: 10px;
   display: flex;
   align-items: flex-end;
@@ -32,3 +33,25 @@ h1, h2
   width: 300px;
   height: 300px;
 }
+
+.card-animal p
+{
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
+
+.card-animal .name
+{
+  font-weight: bold;
+}
+
+.card-animal .species
+{
+  font-weight: lighter;
+}
+
+.card-animal .price
+{
+  font-weight: lighter;
+}
+

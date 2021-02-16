@@ -3,11 +3,13 @@
 
 <div class="container-cards-animals">
   <% @animals.each do |animal| %>
-    <div class="card-animal">
-      <p><%= animal.name %></p>
-      <p><%= animal.species %></p>
-      <p><%= animal.price_per_hour %></p>
+  <%= link_to animal_path(animal) do %>
+    <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
+      <p class="h2 name"><%= animal.name %></p>
+      <p class="h2 species"><%= animal.species %></p>
+      <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
     </div>
+    <% end %>
   <% end %>
 </div>
 <%= link_to "Add A New Friend", new_animal_path %>
