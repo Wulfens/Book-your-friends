@@ -5,6 +5,7 @@ class AnimalsController < ApplicationController
 
   def show
     @animal = Animal.find(params[:id])
+    @location = Location.new
   end
 
   def new
