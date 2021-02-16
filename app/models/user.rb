@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :animals, through: :locations, as: :rented_animals
   has_many :animals, dependent: :destroy
   has_many :locations
+  has_one_attached :photo
+  has_one_attached :banner_photo
 end
