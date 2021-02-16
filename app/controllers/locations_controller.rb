@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
         @animal = Animal.find(params[:animal_id])
         @location.animal = @animal
         @location.user = @user
-        @location.save!
+        @location.save
         redirect_to animal_path(@animal)
       end
 
