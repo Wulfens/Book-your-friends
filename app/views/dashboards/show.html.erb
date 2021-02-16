@@ -1,1 +1,23 @@
+<% if current_user.banner_photo.attached? %>
+<div class="dashboard-banner" style="background-image: url('<%= cl_image_path current_user.banner_photo.key %>"></div>
+<% else %>
+<div class="dashboard-banner-grey"></div>
+<% end %>
 <h1>Coucou, <%= current_user.first_name %> </h1>
+
+<% if current_user.photo.attached? %>
+  <%= cl_image_tag(current_user.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+<% else %>
+  <%= image_tag("undraw_male_avatar_323b.png",
+      width: 100, height: 100, crop: :fill) %>
+<% end %>
+ <h2>My animals</h2>
+<% @animals.each do |animal| %>
+<li><%= animal.name %></li>
+<% end %>
+
+  <div id="button-add">
+<i class="fas fa-plus"></i>
+<%= link_to "Add an animal", new_animal_path %>
+  </div>
