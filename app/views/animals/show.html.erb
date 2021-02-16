@@ -7,3 +7,6 @@
 
 
 <%= link_to "Back to All Friends", animals_path %>
+<%= link_to "Delete This Friend",
+            animal_path(@animal),
+            method: :delete, data: { confirm: "Are you sure ?"}  %>
