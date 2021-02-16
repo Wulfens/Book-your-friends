@@ -5,5 +5,22 @@
 <p> <%= @animal.price_per_hour %> </p>
 <p> <%= @animal.description %> </p>
 
-
+<% if @animal.photo.attached? %>
+  <%= cl_image_tag(@animal.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+<% end %>
 <%= link_to "Back to All Friends", animals_path %>
+<%= link_to "Delete This Friend",
+            animal_path(@animal),
+            method: :delete, data: { confirm: "Are you sure ?"}  %>
+
+
+<% if current_user %>
+  <% @animal.locations.where(user_id: current_user.id).each do |location| %>
+    <p> <%= location.start_date %> - <%= location.end_date %> </p>
+    <%= link_to "Create A Review", new_location_review_path(location)  %>
+  <% end %>
+<% end %>
+
+<%= render '/locations/new' %>
+
