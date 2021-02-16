@@ -6,11 +6,22 @@ class LocationsController < ApplicationController
     end
 
     def create
-        @location = location.new(location_params)
+        @location = Location.new(location_params)
         @animal = Animal.find(params[:animal_id])
         @location.animal = @animal
         @location.save
         redirect_to animal_path(@animal)
+      end
+
+      def show
+        @animal         = Animal.find(params[:id])
+        @locations       = Location.where(animal_id: @animal.id)
+        @locations_dates = @locations.map do |location|
+          {
+            from: location.start_date,
+            to:   location.end_date
+          }
+        end
       end
     
       private
