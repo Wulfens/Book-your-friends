@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :animals, through: :locations, as: :rented_animals
-  has_many :animals
+  has_many :animals, dependent: :destroy
   has_many :locations
 end
