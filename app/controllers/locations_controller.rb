@@ -7,8 +7,10 @@ class LocationsController < ApplicationController
 
     def create
         @location = Location.new(location_params)
+        @user = current_user
         @animal = Animal.find(params[:animal_id])
         @location.animal = @animal
+        @location.user = @user
         @location.save
         redirect_to animal_path(@animal)
       end
