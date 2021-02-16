@@ -5,6 +5,7 @@ class AnimalsController < ApplicationController
 
   def show
     @animal = Animal.find(params[:id])
+    @location = Location.new
   end
 
   def new
@@ -30,6 +31,6 @@ class AnimalsController < ApplicationController
   private
 
   def animal_params
-    params.require(:animal).permit(:name, :species, :price_per_hour)
+    params.require(:animal).permit(:name, :species, :price_per_hour, :photo)
   end
 end
