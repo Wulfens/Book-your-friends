@@ -34,12 +34,14 @@ h1, h2
   flex-direction: column;
   width: 300px;
   height: 300px;
+  margin: 15px;
 }
 
 .card-animal p
 {
   padding-right: 15px;
   padding-bottom: 5px;
+  text-shadow: 0px 1px 8px #000000;
 }
 
 .card-animal .name
@@ -90,4 +92,25 @@ h1, h2
   color: #fff;
   margin: 10px;
   font-weight: lighter;
+}
+
+.footer
+{
+  padding: 50px 25px;
+  background: #150c21;
+}
+
+.footer p
+{
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+i
+{
+  color: red;
+  padding: 5px;
 }
