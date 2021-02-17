@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+body
+{
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2
+{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container-cards-animals
+{
+  display: flex;
+  margin: 0 20%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-animal
+{
+  border: 1px solid rgb(230, 230, 230);
+  color: #F3F3F3;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+}
+
+.card-animal p
+{
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
+
+.card-animal .name
+{
+  font-weight: bold;
+}
+
+.card-animal .species
+{
+  font-weight: lighter;
+}
+
+.card-animal .price
+{
+  font-weight: lighter;
+}
+
+.hero-banner
+{
+  display: flex;
+  border: 1px solid rgb(210, 210, 210);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  font-weight: medium;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+  width: 1200px;
+  margin: 20px auto;
+  background-image: url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+.hero-banner a
+{
+  display: flex;
+  box-sizing: border-box;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(0, 26, 255);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(50, 70, 250);
+  color: #fff;
+  margin: 10px;
+  font-weight: lighter;
+}
