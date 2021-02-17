@@ -1,0 +1,56 @@
+.container {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  .say-hello {
+    font-size: 42px;
+  }
+  .animal-name {
+    font-size: 30px;
+  }
+  a {
+    position: absolute;
+    bottom: 0;
+    right: 52px;
+  }
+}
+
+.container-sm, .container {
+  max-width: 100%;
+}
+
+#pic {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  bottom: 52px;
+  img {
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+#ref {
+  text-align: center;
+  margin-bottom: 62px;
+  font-size: 30px;
+}
+
+.cal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+#calendrier {
+  background-color: white;
+  padding: 5px 20px;
+}
