@@ -9,6 +9,7 @@
   <%= cl_image_tag(@animal.photo.key,
       width: 400, height: 300, crop: :fill) %>
 <% end %>
+
 </div>
 <div id="ref">
   <p> <strong><%= @animal.species %></strong></p>
@@ -35,3 +36,11 @@
               animal_path(@animal),
               method: :delete, data: { confirm: "Are you sure ?"}  %>
 </div>
+
+
+<% @reviews.each do |review| %>
+  <p> <%= review.rating %> </p>
+  <p><%= review.content %></p>
+<% end %>
+
+

@@ -14,11 +14,13 @@ h1, h2
 
 .container-cards-animals
 {
-  display: grid;
+  display: flex;
   margin: 0 20%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-animal

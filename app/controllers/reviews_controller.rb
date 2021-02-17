@@ -1,15 +1,16 @@
 class ReviewsController < ApplicationController
+
   def new
-    @animal = Animal.find(params[:animal_id])
+    @location = Location.find(params[:location_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @animal = AnimaL.find(params[:animal_id])
-    @review.animal = @animal
+    @location = Location.find(params[:location_id])
+    @review.location = @location
     if @review.save
-      redirect_to animal_path(@animal)
+      redirect_to animal_path(@location.animal)
     else
       render :new
     end
