@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
 
 body
 {
@@ -55,3 +55,37 @@ h1, h2
   font-weight: lighter;
 }
 
+.hero-banner
+{
+  display: flex;
+  border: 1px solid rgb(210, 210, 210);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  font-weight: medium;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+  width: 1200px;
+  margin: 20px auto;
+  background-image: url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+.hero-banner a
+{
+  display: flex;
+  box-sizing: border-box;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(0, 26, 255);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(50, 70, 250);
+  color: #fff;
+  margin: 10px;
+  font-weight: lighter;
+}
