@@ -16,14 +16,14 @@ class LocationsController < ApplicationController
       end
 
       def show
-        @animal         = Animal.find(params[:id])
-        @locations       = Location.where(animal_id: @animal.id)
-        @locations_dates = @locations.map do |location|
-          {
-            from: location.start_date,
-            to:   location.end_date
-          }
-        end
+        @location = Location.find(params[:id])
+        # @locations       = Location.where(animal_id: @animal.id)
+        # @locations_dates = @locations.map do |location|
+        #   {
+        #     from: location.start_date,
+        #     to:   location.end_date
+        #   }
+        # end
       end
     
       private
