@@ -37,6 +37,11 @@ body
   margin: 15px;
 }
 
+a:hover
+{
+  text-decoration: none;
+}
+
 .card-animal p
 {
   padding-right: 15px;
@@ -47,16 +52,19 @@ body
 .card-animal .name
 {
   font-weight: bold;
+  text-decoration: none;
 }
 
 .card-animal .species
 {
   font-weight: lighter;
+  text-decoration: none;
 }
 
 .card-animal .price
 {
   font-weight: lighter;
+  text-decoration: none;
 }
 
 .hero-banner
