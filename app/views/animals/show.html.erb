@@ -1,55 +1,76 @@
 
-<div class="container">
-    <p class="say-hello">Say <strong>Hello </strong> to</p>
-    <p class="animal-name"> <%= @animal.name %> </p>
-    <a href="#range_start" class="btn btn-primary" style="z-index: 10;">Book now!</a>
+<div id="header">
+  <p class="say-hello">Say <strong>Hello </strong> to</p>
+  <p class="animal-name"> <%= @animal.name %> </p>
+ <!--  <a href="#range_start" class="btn btn-primary" style="z-index: 10;">Book now!</a> -->
+ </div>
 
-
-</div>
+<!-- <div class="container">
+</div> -->
 <div id="pic">
 <% if @animal.photo.attached? %>
   <%= cl_image_tag(@animal.photo.key,
       width: 400, height: 300, crop: :fill) %>
 <% end %>
-
-</div>
-<div id="ref">
-  <p> <strong><%= @animal.species %></strong></p>
-  <p> <%= @animal.race %> </p>
-  <p> <%= @animal.price_per_hour %> €/Hour </p>
-  <p> <%= @animal.description %> </p>
-
-</div>
-<div class="cal">
-  <div>
-  <%= render '/locations/new' %>
-  </div>
-  <div id="calendrier">
-    <% if current_user %>
-      <% @animal.locations.where(user_id: current_user.id).each do |location| %>
-        <p> <%= location.start_date %> - <%= location.end_date %> </p>
-          <%= link_to "Create A Review", new_location_review_path(location) %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-<div id="link">
-  <%= link_to "Back to All Friends", animals_path, class: "btn btn-primary" %>
-  <% if @animal.user == current_user %>
-    <%= link_to "Delete This Friend",
-                animal_path(@animal),
-                method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-primary" %>
-    <% end %>
 </div>
 
-<div class="reviews">
-  <h2>Reviews</h2>
-  <% @reviews.each do |review| %>
-  <div class="review">
-    <p> <%= review.rating %> /5 </p>
-    <p><%= review.content %></p>
-  </div>
+<div id="back">
+  <%= link_to animals_path, class: "btn"  do %>
+  <%= icon 'fas', 'long-arrow-alt-left', "Back" %>
   <% end %>
 </div>
 
+<div id="ref">
+  <p> <strong><%= @animal.species.capitalize %></strong></p>
+  <% if @animal.race == nil %>
+    <p> <%= @animal.race %> </p>
+  <% else %>
+    <p> <%= @animal.race.capitalize %> </p>
+  <% end %>
+  <p> <%= @animal.price_per_hour %> €/Day </p>
+  <% if @animal.description == nil %>
+    <p> <%= @animal.description %> </p>
+  <% else %>
+    <p> <%= @animal.description.capitalize %> </p>
+  <% end %>
+</div>
 
+<% if @animal.user != current_user %>
+  <div class="cal">
+    <div id="render">
+    <%= render '/locations/new' %>
+    </div>
+
+    <div class="reviews">
+      <h2>Reviews</h2>
+      <% if @animal.reviews.empty? %>
+        <p> Waiting for his first review ! </p>
+      <% else %>
+        <% @reviews.first(5).each do |review| %>
+        <div class="review">
+          <p> <%= review.rating %> /5 </p>
+          <p><%= review.content %></p>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% else %>
+
+  <div class="not-cal">
+    <div class="reviews">
+      <h2>Reviews</h2>
+      <% if @animal.reviews.empty? %>
+        <p> Waiting for his first review ! </p>
+      <% else %>
+        <% @reviews.first(5).each do |review| %>
+        <div class="review">
+          <p> <%= review.rating %> /5 </p>
+          <p><%= review.content %></p>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
