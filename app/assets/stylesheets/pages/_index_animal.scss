@@ -127,12 +127,12 @@ i
   border-radius: 100px;
 }
 
-form i
+.form form i
 {
   color: #000;
 }
 
-form
+.form form
 {
   display: flex;
   justify-content: center;
@@ -140,7 +140,7 @@ form
   width: 500px;
 }
 
-form button
+.form form button
 {
   border-radius: 50px;
   padding: 5px;
@@ -150,7 +150,7 @@ form button
   right: 5px;
 }
 
-form input
+.form form input
 {
   padding: 20px !important;
   border-radius: 10px !important;
