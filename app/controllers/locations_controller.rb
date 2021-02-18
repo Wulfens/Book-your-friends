@@ -34,7 +34,7 @@ class LocationsController < ApplicationController
       private
     
       def location_params
-        params.require(:location).permit(:start_date, :end_date)
+        params.require(:location).permit(:start_date, :end_date, :status)
       end
    
 end

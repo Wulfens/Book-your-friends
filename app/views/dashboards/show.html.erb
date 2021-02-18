@@ -54,7 +54,7 @@
             <p ><%= location.user.first_name %></p>
             <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
             <%= link_to "Accept", accept_location_path(location), method: :patch %>
-            <%= link_to "Decline", accept_location_path(location), method: :patch %>
+            <%= link_to "Decline", decline_location_path(location), method: :patch %>
         </div>
         <% end %>
     <% end %>
