@@ -1,6 +1,11 @@
 class AnimalsController < ApplicationController
   def index
-    @animals = Animal.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR species ILIKE :query"
+      @animals = Animal.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @animals = Animal.all
+    end
   end
 
   def show
