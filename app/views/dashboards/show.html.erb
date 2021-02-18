@@ -47,6 +47,12 @@
 </div>
 </div>
 
+
+<h3>My bookings</h3>
+<% current_user.locations.each do |location| %>
+  <%= link_to "accept", accept_location_path(location), method: :patch %>
+<% end %>
+  
 <h3>Current bookings of my animals</h3>
 <div class="request-cards">
 <div class="card" style="width: 18rem;">
