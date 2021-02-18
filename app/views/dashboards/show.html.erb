@@ -1,29 +1,23 @@
 <div class="container">
-  <% if current_user.banner_photo.attached? %>
-  <div class="dashboard-banner" style="background-image: url('<%= cl_image_path current_user.banner_photo.key %>"></div>
+    <p class="welcome">Welcome, <strong><%= current_user.first_name %></strong></p>
+</div>
+
+<div id="pic">
+  <% if current_user.photo.attached? %>
+    <%= cl_image_tag(current_user.photo.key,
+        width: 400, height: 300, crop: :fill) %>
   <% else %>
-  <div class="dashboard-banner-grey"></div>
+          <%= image_tag("undraw_male_avatar_323b.png",
+        width: 400, height: 300, crop: :fill) %>
   <% end %>
-  <h1>Coucou, <%= current_user.first_name %> </h1>
-    <div id="pic">
-    <% if current_user.photo.attached? %>
-      <%= cl_image_tag(current_user.photo.key,
-          width: 400, height: 300, crop: :fill) %>
-    <% else %>
-      <%= image_tag("undraw_male_avatar_323b.png",
-          width: 100, height: 100, crop: :fill) %>
-    <% end %>
-    </div>
 
-    <div id="ref">
-      <p> <strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
-    </div>
-
-    <h2>My animals</h2>
- <div class="container-h-animals">
+</div>
+<div class="container-d">
+<h3>My animals</h3>
+<div class="container-cards-animals">
   <% @animals.each do |animal| %>
   <%= link_to animal_path(animal) do %>
-    <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
+    <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 200, width: 200, crop: :fill %>')">
       <p class="h2 name"><%= animal.name %></p>
       <p class="h2 species"><%= animal.species %></p>
       <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
@@ -31,36 +25,71 @@
     <% end %>
   <% end %>
 </div>
-
-      <div id="button-add">
-<i class="fas fa-plus"></i>
-<%= link_to "Add an animal", new_animal_path %>
+<h3>Booking requests of my animals</h3>
+<div class="request-cards">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Username</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Wants to rent</h6>
+    <p class="card-text">Dates</p>
+    <a href="#" class="card-link">Accept</a>
+    <a href="#" class="card-link">Decline</a>
   </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Username</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Wants to rent</h6>
+    <p class="card-text">Dates</p>
+    <a href="#" class="card-link">Accept</a>
+    <a href="#" class="card-link">Decline</a>
+  </div>
+</div>
+</div>
+
 
 <h3>My bookings</h3>
 <% current_user.locations.each do |location| %>
   <%= link_to "accept", accept_location_path(location), method: :patch %>
 <% end %>
-
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">John</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Wants to rent Sam</h6>
-      <p class="card-text">Hello, I'm an animal lover and I would rent Sam to keep me company.</p>
-      <a href="#" class="card-link">Accept</a>
-      <a href="#" class="card-link">Decline</a>
-    </div>
-  </div>
-
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Bill</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Wants to rent Sam</h6>
-      <p class="card-text">Hello Jean, I see your pet on Friends and I would rent Sam for my holidays in Dubaï.</p>
-      <a href="#" class="card-link">Accept</a>
-      <a href="#" class="card-link">Decline</a>
-    </div>
+  
+<h3>Current bookings of my animals</h3>
+<div class="request-cards">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Username</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Has rented</h6>
+    <p class="card-text">Dates</p>
+    <p>Rating</p>
   </div>
 </div>
 </div>
+
+<h3>My requests</h3>
+<div class="request-cards">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Animal name</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Message</h6>
+    <p class="card-text">Dates</p>
+    <p>Waiting for an answer...</p>
+  </div>
+</div>
+</div>
+
+<h3>My current bookings</h3>
+<div class="request-cards">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Animal name</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Message</h6>
+    <p class="card-text">Dates</p>
+    <p>Rating</p>
+  </div>
+</div>
+</div>
+
+</div>
+      
+      
 
