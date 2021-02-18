@@ -59,6 +59,7 @@
         <% end %>
     <% end %>
   </div>
+  
 
   <div class="accepted-cards">
     <h3>Accepted Bookings</h3>
@@ -90,6 +91,7 @@
 <% end %>
   
 <% if current_user.locations != nil %>
+
   <% if current_user.locations.map(&:status).include? "Pending" %>
     <h3>My pending bookings</h3>
     <% current_user.locations.each do |location| %>
@@ -105,37 +107,36 @@
     <% end %>
   <% end %>
     
-<% if current_user.locations.map(&:status).include? "Accepted" %>
-  <h3>My Accepted bookings</h3>
-  <% current_user.locations.each do |location| %>
-    <% if location.status == "Accepted" %>
-      <div class="my-declined-bookings">
-          <div class="card-location">
-            <p><%= location.start_date %></p>
-            <p><%= location.end_date %></p>
-            <p><%= location.status %></p>
-          </div>
-      </div>
-      <% end %>
+  <% if current_user.locations.map(&:status).include? "Accepted" %>
+    <h3>My Accepted bookings</h3>
+    <% current_user.locations.each do |location| %>
+      <% if location.status == "Accepted" %>
+        <div class="my-declined-bookings">
+            <div class="card-location">
+              <p><%= location.start_date %></p>
+              <p><%= location.end_date %></p>
+              <p><%= location.status %></p>
+              <%= link_to "Leave a review", new_location_review_path(location) %>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
   <% end %>
-<% end %>
   
-<% if current_user.locations.map(&:status).include? "Declined" %>
-  <h3>My Declined bookings</h3>
-  <% current_user.locations.each do |location| %>
-    <% if location.status == "Declined" %>
-      <div class="my-declined-bookings">
-          <div class="card-location">
-            <p><%= location.start_date %></p>
-            <p><%= location.end_date %></p>
-            <p><%= location.status %></p>
-          </div>
-      </div>
-      <% end %>
+  <% if current_user.locations.map(&:status).include? "Declined" %>
+    <h3>My Declined bookings</h3>
+    <% current_user.locations.each do |location| %>
+      <% if location.status == "Declined" %>
+        <div class="my-declined-bookings">
+            <div class="card-location">
+              <p><%= location.start_date %></p>
+              <p><%= location.end_date %></p>
+              <p><%= location.status %></p>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
   <% end %>
-<% end %>
-
-
 
 <% end %>
 
