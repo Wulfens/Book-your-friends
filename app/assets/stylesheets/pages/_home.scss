@@ -27,12 +27,11 @@
   margin: 10px;
 }
 
-.container-animal mark
+.container-animal ins
 {
-  background-color: #e9c46a;
-  color: #fff;
-  border-radius: 5px;
-  opacity: 0.9;
+  text-decoration-color: #e9c46a;
+  text-decoration-thickness: 3px;
+  text-underline-position: under;
 }
 
 .container-animal a

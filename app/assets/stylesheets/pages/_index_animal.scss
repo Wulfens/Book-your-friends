@@ -5,12 +5,12 @@ body
   font-family: 'Raleway', sans-serif;
 }
 
-h1, h2
-{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+// h1, h2
+// {
+//   display: flex;
+//   justify-content: center;
+//   text-align: center;
+// }
 
 .container-cards-animals
 {
@@ -113,4 +113,50 @@ i
 {
   color: red;
   padding: 5px;
+}
+
+.form
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-button
+{
+  border-radius: 100px;
+}
+
+.form form i
+{
+  color: #000;
+}
+
+.form form
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
+.form form button
+{
+  border-radius: 50px;
+  padding: 5px;
+  background-color: #E9C46A;
+  border: 1px solid #ced4da;
+  position: absolute;
+  right: 5px;
+}
+
+.form form input
+{
+  padding: 20px !important;
+  border-radius: 10px !important;
+}
+
+.form form
+{
+  position: relative
 }
