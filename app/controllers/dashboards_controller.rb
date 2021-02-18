@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    @animals = Animal.where(user_id: current_user)
+    @animals = current_user.animals
   end
 end
