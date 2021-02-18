@@ -25,7 +25,8 @@ p.animal-name {
 }
 
 .container {
-  width: 100%;
+  width: 600px;
+  height: 400px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 2px 15px lightgrey;
@@ -107,6 +108,10 @@ p.animal-name {
   padding: 52px;
   border-radius: 10px;
   box-shadow: 2px 2px 15px lightgrey;
+  h2 {
+    text-align: center;
+    margin-top: 54px;
+  }
   .review{
     width: 100%;
     display: flex;
