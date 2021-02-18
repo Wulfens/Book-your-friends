@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: relative;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,7 +19,8 @@
   color:white;
   font-weight: bold;
   text-decoration: none;
-  margin-left: 1400px;
+  position: absolute;
+  right: 100px;
 }
 
 .btn-create:hover {
