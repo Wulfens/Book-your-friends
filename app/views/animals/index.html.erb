@@ -1,11 +1,15 @@
-<%= form_tag animals_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a specific animal or a specific species"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="form m-5">
+  <%= form_tag animals_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a specific animal or a specific species"
+    %>
+    <%= button_tag do %>
+      <%= icon 'fas', 'search' %>
+    <% end %>
+  <% end %>
+</div>
 
 <div class="container-cards-animals">
   <% @animals.each do |animal| %>
