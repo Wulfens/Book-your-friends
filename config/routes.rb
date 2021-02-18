@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   resources :locations, only: [ :show ] do
     resources :reviews, only: [ :new, :create ]
   end
+
+  resources :locations do
+    member do
+      patch "/accept", to: "locations#accept"
+    end
+  end
 end

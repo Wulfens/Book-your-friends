@@ -17,15 +17,20 @@ class LocationsController < ApplicationController
 
       def show
         @location = Location.find(params[:id])
-        # @locations       = Location.where(animal_id: @animal.id)
-        # @locations_dates = @locations.map do |location|
-        #   {
-        #     from: location.start_date,
-        #     to:   location.end_date
-        #   }
-        # end
       end
-    
+
+      def accept
+        @location = Location.find(params[:id])
+        @location.update(status: "Accepted")
+        redirect_to dashboard_path
+      end
+
+      def decline
+        @location = Location.find(params[:id])
+        @location.update(status: "Declined")
+        redirect_to dashboard_path
+      end
+
       private
     
       def location_params

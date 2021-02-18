@@ -38,16 +38,9 @@
   </div>
 
 <h3>My bookings</h3>
-<div class="my-cards">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Eric</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Wants to rent Angel</h6>
-      <p class="card-text">Hi, I need a cute animal for a photo shooting I would rent Angel.</p>
-      <a href="#" class="card-link">Accept</a>
-      <a href="#" class="card-link">Decline</a>
-    </div>
-  </div>
+<% current_user.locations.each do |location| %>
+  <%= link_to "accept", accept_location_path(location), method: :patch %>
+<% end %>
 
   <div class="card" style="width: 18rem;">
     <div class="card-body">
