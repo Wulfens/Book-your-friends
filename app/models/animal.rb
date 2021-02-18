@@ -6,4 +6,12 @@ class Animal < ApplicationRecord
   validates :species, presence: true
   validates :price_per_hour, presence: true
   has_one_attached :photo
+
+  def average_rating
+    reviews = self.reviews
+
+    return 0 if reviews.empty?
+
+    reviews.map(&:rating).sum / reviews.length.to_f
+  end
 end
