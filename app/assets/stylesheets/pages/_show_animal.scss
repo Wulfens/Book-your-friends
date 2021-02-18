@@ -1,4 +1,4 @@
-.container {
+#header {
   background-color: white;
   width: 100%;
   text-align: center;
@@ -9,20 +9,38 @@
   position: relative;
   .say-hello {
     font-size: 42px;
-  }
   .animal-name {
-    font-size: 30px;
-  }
+    }
   a {
     position: absolute;
     bottom: -21px;
     right: 52px;
   }
+}
+}
 
+p.animal-name {
+  font-size: 52px;
+  color: #E9C46A;
+}
+
+.container {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px lightgrey;
+  padding: 20px;
 }
 
 .container-sm, .container {
   max-width: 100%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+    border-radius: 10px;
 }
 
 #pic {
@@ -30,7 +48,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  bottom: 52px;
+  bottom: 44px;
   img {
     height: 140px;
     width: 140px;
@@ -51,8 +69,21 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   margin-bottom: 49px;
-
+  h2 {
+    color: #E9C46A;
+  }
 }
+
+.not-cal {
+  padding: 0 60px;
+  margin: 0 auto;
+  width: 750px;
+  margin-bottom: 50px;
+  h2 {
+    color: #E9C46A;
+  }
+}
+
 
 #calendrier {
   display: flex;
@@ -70,10 +101,12 @@
   }
 }
 
-
 .reviews {
-  margin: 40px auto;
-  width: 80%;
+  background-color: white;
+  width: 100%;
+  padding: 52px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px lightgrey;
   .review{
     width: 100%;
     display: flex;
@@ -84,11 +117,41 @@
   }
 }
 
-.btn .btn-primary {
+.other-reviews {
+  background-color: white;
+  width: 100%;
+  padding: 52px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px lightgrey;
+  .review{
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid lightgrey;
+    p {
+      padding: 20px;
+    }
+  }
+}
 
+.reviews p {
+  margin-top: 64px;
+  text-align: center;
+}
+
+#back {
+  z-index: 15;
+  position: relative;
+  top: -124px;
+ i {
+  color: black;
+ }
 }
 
 .form-wrapper {
   padding: 10px;
   margin-top: 20px;
+}
+
+.form-group.string.optional {
+  text-align: center;
 }
