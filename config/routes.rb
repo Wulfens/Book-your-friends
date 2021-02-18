@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :locations do
     member do
       patch "/accept", to: "locations#accept"
+      patch "/decline", to: "locations#decline"
     end
   end
 end
