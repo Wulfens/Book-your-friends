@@ -96,10 +96,10 @@
 <% if current_user.locations != nil %>
 
   <% if current_user.locations.map(&:status).include? "Pending" %>
-    <h3>My pending bookings</h3>
     <% current_user.locations.each do |location| %>
       <% if location.status == "Pending" %>
         <div class="my-pending-bookings">
+          <h3>My pending bookings</h3>
             <div class="card-location">
               <p><%= location.start_date %></p>
               <p><%= location.end_date %></p>
