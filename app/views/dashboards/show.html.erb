@@ -1,5 +1,5 @@
-<div class="container">
-    <p class="welcome">Welcome, <strong><%= current_user.first_name %></strong></p>
+<div class="container-dashboard">
+    <p class="welcome">Welcome, <strong> <%= current_user.first_name %> </strong></p>
 </div>
 
 <%# Coucou toi %>
@@ -26,7 +26,7 @@
       <% @animals.each do |animal| %>
       <%= link_to animal_path(animal) do %>
       <% if animal.photo.attached? %>
-          <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 200, width: 200, crop: :fill %>')">
+          <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
         <% else %>
           <div class="card-animal">
         <% end %>
@@ -36,9 +36,12 @@
         </div>
         <% end %>
       <% end %>
-      <div class="add-animal">
-        <%= link_to "Add a friend", new_animal_path %>
-      </div>
+        <%= link_to new_animal_path, class: "card-animal" do %>
+        <div class="add-image">
+        
+        </div>
+          <%= icon 'fas', 'plus-circle', class: "not-blured" %>
+        <% end %>
     </div>
   </div>
 <% end %>
