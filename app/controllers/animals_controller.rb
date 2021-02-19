@@ -5,6 +5,7 @@ class AnimalsController < ApplicationController
       @animals = Animal.where(sql_query, query: "%#{params[:query]}%")
     else
       @animals = Animal.all
+      @top_animals = Animal.all.sort_by { |animal| - animal.average_rating }.first(5)
     end
   end
 
