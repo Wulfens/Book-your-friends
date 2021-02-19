@@ -57,13 +57,13 @@
     <% else %>
 
     <div class="not-cal">
-      <div class="reviews">
+      <div class="reviews-owner">
         <h2>Reviews</h2>
         <% if @animal.reviews.empty? %>
           <p> Waiting for his first review ! </p>
         <% else %>
           <% @reviews.first(5).each do |review| %>
-          <div class="review">
+          <div class="review-owner">
             <p> <%= review.rating %> /5 </p>
             <p><%= review.content %></p>
           </div>
