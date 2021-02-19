@@ -2,13 +2,17 @@
   background-color: white;
   width: 100%;
   text-align: center;
-  height: 230px;
+  height: 170px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   .say-hello {
-    font-size: 42px;
+    font-size: 30px;
+  .animal-name {
+    color: #E9C46A;
+  }
+
   a {
     position: absolute;
     bottom: -21px;
@@ -18,28 +22,16 @@
 }
 
 p.animal-name {
-  font-size: 52px;
+  font-size: 32px;
   color: #E9C46A;
 }
 
-.container {
-  width: 600px;
-  height: 400px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 2px 2px 15px lightgrey;
-  padding: 20px;
-}
-
-.container-sm, .container {
-  max-width: 100%;
-}
 
 .btn-primary {
-    color: #fff;
-    background-color: black;
-    border-color: black;
-    border-radius: 10px;
+  color: #fff;
+  background-color: black;
+  border-color: black;
+  border-radius: 10px;
 }
 
 #pic {
@@ -47,10 +39,10 @@ p.animal-name {
   justify-content: center;
   position: relative;
   width: 100%;
-  bottom: 44px;
+  bottom: 50px;
   img {
-    height: 140px;
-    width: 140px;
+    height: 120px;
+    width: 120px;
     object-fit: cover;
     border-radius: 50%;
   }
@@ -59,7 +51,12 @@ p.animal-name {
 #ref {
   text-align: center;
   margin-bottom: 62px;
-  font-size: 30px;
+  font-size: 27px;
+  #description{
+    #prout{
+      padding: 14px 100px;
+    }
+  }
 }
 
 .cal {
@@ -83,7 +80,6 @@ p.animal-name {
   }
 }
 
-
 #calendrier {
   display: flex;
   background-color: white;
@@ -103,21 +99,27 @@ p.animal-name {
 .reviews {
   background-color: white;
   width: 100%;
-  padding: 52px;
   border-radius: 10px;
   box-shadow: 2px 2px 15px lightgrey;
   h2 {
     text-align: center;
-    margin-top: 54px;
+    padding: 20px;
+    margin-top: 20px;
   }
   .review{
     width: 100%;
     display: flex;
     border-bottom: 2px solid lightgrey;
     p {
-      padding: 20px;
+      padding: 35px;
     }
   }
+}
+
+.coucou {
+  background-color: white;
+  box-shadow: 2px 2px 15px lightgrey;
+  border-radius: 10px;
 }
 
 .other-reviews {
@@ -137,22 +139,21 @@ p.animal-name {
 }
 
 .reviews p {
-  margin-top: 64px;
   text-align: center;
 }
 
 #back {
   z-index: 15;
-  position: relative;
-  top: -124px;
+  position: absolute;
+  bottom: 0;
  i {
   color: black;
  }
 }
 
-.form-wrapper {
-  padding: 10px;
-  margin-top: 20px;
+#prout {
+  color: #b2adad;
+  font-size: 15px;
 }
 
 .form-group.string.optional {

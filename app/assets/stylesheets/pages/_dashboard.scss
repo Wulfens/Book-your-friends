@@ -18,9 +18,10 @@
 
 h2, h3, h4 {
   margin-bottom: 20px;
-  margin-top: 20px;
+  padding: 20px;
   color : #E9C46A;
 }
+
 
 .welcome 
 {
@@ -35,7 +36,6 @@ h2, h3, h4 {
 {
   padding: 10px;
 }
-
 
 .container-cards-animals{
   display: flex;
@@ -93,6 +93,10 @@ h2, h3, h4 {
     margin-left: 10px;
   }
 }
+
+
+.container-sm, .container {
+  max-width: 100%;
 
 .accepted-cards
 {
@@ -161,7 +165,6 @@ h2, h3, h4 {
   }
 }
 
-
 .reviews {
   width: 80%;
   .review{
@@ -170,6 +173,8 @@ h2, h3, h4 {
     border-bottom: 2px solid lightgrey;
     p {
       padding: 20px;
+      margin-top: 58px;
+
     }
   }
 }
@@ -177,7 +182,6 @@ h2, h3, h4 {
 
 .form-wrapper {
   padding: 10px;
-  margin-top: 20px;
 }
 
 .add-image
