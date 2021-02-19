@@ -9,8 +9,6 @@
   position: relative;
   .say-hello {
     font-size: 42px;
-  .animal-name {
-    }
   a {
     position: absolute;
     bottom: -21px;
@@ -25,15 +23,15 @@ p.animal-name {
 }
 
 .container {
-  width: 600px;
-  height: 400px;
+  width: 500px;
+  height: 470px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 2px 15px lightgrey;
   padding: 20px;
 }
 
-.container-sm, .container {
+.container-sm {
   max-width: 100%;
 }
 
@@ -72,6 +70,7 @@ p.animal-name {
   margin-bottom: 49px;
   h2 {
     color: #E9C46A;
+    margin: 10px 0 25px 0;
   }
 }
 
@@ -159,4 +158,26 @@ p.animal-name {
 
 .form-group.string.optional {
   text-align: center;
+}
+
+.simple_form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // input{
+  //   width: 100%;
+  // }
+}
+
+input.btn.btn.btn-primary{
+  width: 100%;
+}
+.location_start_date{
+  position: relative;
+  bottom: 15px;
+}
+
+.submit-location {
+  margin-bottom: 25px;
 }

@@ -1,12 +1,10 @@
 <div class="container">
-
     <h1>How was your experience ?</h1>
-
     <%= simple_form_for([ @location, @review ]) do |f|%>
         <%= f.input :rating %>
         <%= f.input :content %>
         <%= f.submit "Post my review", class: "btn btn-primary" %>
     <% end %>
-
 </div>
+
 
