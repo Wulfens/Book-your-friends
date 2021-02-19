@@ -72,11 +72,10 @@ p.animal-name {
 
 .cal {
   padding: 0 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  display: flex;
   margin-bottom: 49px;
-  h2 {
+  justify-content: center;
+    h2 {
     color: #E9C46A;
     margin: 10px 0 25px 0;
   }
@@ -113,6 +112,7 @@ p.animal-name {
   width: 100%;
   border-radius: 10px;
   box-shadow: 2px 2px 15px lightgrey;
+  width: 50%;
   h2 {
     text-align: center;
     padding: 20px;
@@ -132,6 +132,7 @@ p.animal-name {
   background-color: white;
   box-shadow: 2px 2px 15px lightgrey;
   border-radius: 10px;
+  width: 50%;
 }
 
 .other-reviews {
