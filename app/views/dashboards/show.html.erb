@@ -48,8 +48,8 @@
   
 <% if @animals != nil %>
 
+  <h3>Booking requests of my animals</h3>
   <div class="request-cards">
-    <h3>Booking requests of my animals</h3>
     <% @animals.each do |animal| %>
       <% animal.locations.where(status: "Pending").each do |location| %>
         <div class="card-animal">
@@ -64,8 +64,8 @@
   </div>
   
 
-  <div class="accepted-cards">
-    <h3>Accepted Bookings</h3>
+  <h3>Accepted Bookings</h3>
+  <div class="request-cards">
     <% @animals.each do |animal| %>
         <% animal.locations.where(status: "Accepted").each do |location| %>
           <div class="card-animal">
@@ -78,8 +78,8 @@
       <% end %>
   </div>
 
-  <div class="declined-cards">
-    <h3>Declined Bookings</h3>
+  <h3>Declined Bookings</h3>
+  <div class="request-cards">
     <% @animals.each do |animal| %>
         <% animal.locations.where(status: "Declined").each do |location| %>
           <div class="card-animal">
