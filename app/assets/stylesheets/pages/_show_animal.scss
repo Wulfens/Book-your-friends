@@ -8,11 +8,10 @@
   justify-content: center;
   position: relative;
   .say-hello {
-    font-size: 30px;
+    font-size: 42px;
   .animal-name {
     color: #E9C46A;
   }
-
   a {
     position: absolute;
     bottom: -21px;
@@ -25,6 +24,21 @@ p.animal-name {
   font-size: 32px;
   color: #E9C46A;
 }
+
+
+.container {
+  width: 500px;
+  height: 470px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px lightgrey;
+  padding: 20px;
+}
+
+.container-sm {
+  max-width: 100%;
+}
+
 
 
 .btn-primary {
@@ -67,6 +81,7 @@ p.animal-name {
   margin-bottom: 49px;
   h2 {
     color: #E9C46A;
+    margin: 10px 0 25px 0;
   }
 }
 
@@ -161,3 +176,21 @@ p.animal-name {
 }
 
 
+.simple_form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input.btn.btn.btn-primary{
+  width: 100%;
+}
+.location_start_date{
+  position: relative;
+  bottom: 15px;
+}
+
+.submit-location {
+  margin-bottom: 25px;
+}

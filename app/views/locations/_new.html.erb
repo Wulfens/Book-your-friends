@@ -1,10 +1,13 @@
+
 <div class="coucou">
   <div class="form-wrapper">
     <h2>Book your Friend</h2>
     <%= simple_form_for [@animal, @location] do |f| %>
-      <%= f.input :start_date, label: "Select your dates:", as: :string, required: false, input_html: { id: "range_start", class: "datepicker"} %>
-      <%= f.input :end_date, label: false, as: :string, required: false, input_html: { id: "range_end", class: "datepicker" } %>
-      <%= f.button :submit, "Book", class: "btn btn-primary" %>
+      <%= f.input :start_date, as: :hidden, required: false, input_html: { id: "range_start", class: "datepicker d-none"} %>
+      <%= f.input :end_date, label: false, as: :hidden, required: false, input_html: { id: "range_end", class: "datepicker" } %>
+      <div class="submit-location">
+        <%= f.button :submit, "Book #{@animal.name}", class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
-</div>
+

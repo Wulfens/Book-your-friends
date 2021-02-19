@@ -37,12 +37,27 @@
 </div>
 
 
-<div class="up">
-  <% if @animal.user != current_user %>
-    <div class="cal">
-      <div id="render">
+
+<div id="ref">
+  <p> <strong><%= @animal.species.capitalize %></strong></p>
+  <% if @animal.race == nil %>
+    <p> <%= @animal.race %> </p>
+  <% else %>
+    <p> <%= @animal.race.capitalize %> </p>
+  <% end %>
+  <p> <%= @animal.price_per_hour %> €/Day </p>
+  <% if @animal.description == nil %>
+    <p> <%= @animal.description %> </p>
+  <% else %>
+    <p> <%= @animal.description.capitalize %> </p>
+  <% end %>
+</div>
+
+<% if @animal.user != current_user %>
+  <div class="cal">
+    <div class="container">
       <%= render '/locations/new' %>
-      </div>
+    </div>
 
       <div class="reviews">
         <h2>Reviews</h2>
