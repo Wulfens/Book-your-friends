@@ -11,22 +11,24 @@
   <% end %>
 </div>
 
-<h2>Most popular</h2>
-<div class="container-top5">
-  <% @top_animals.each do |animal| %>
-  <%= link_to animal_path(animal) do %>
-  <% if animal.photo.attached? %>
-    <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
-  <% else %>
-      <div class="card-animal">
-  <% end %>
-      <p class="h2 name"><%= animal.name %></p>
-      <p class="h2 species"><%= animal.species %></p>
-      <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
-    </div>
+<% if @top_animals %>
+  <h2>Most popular</h2>
+  <div class="container-top5">
+    <% @top_animals.each do |animal| %>
+    <%= link_to animal_path(animal) do %>
+    <% if animal.photo.attached? %>
+      <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
+    <% else %>
+        <div class="card-animal">
     <% end %>
-  <% end %>
-</div>
+        <p class="h2 name"><%= animal.name %></p>
+        <p class="h2 species"><%= animal.species %></p>
+        <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
 <h2>All friends</h2>
 <div class="container-cards-animals">
   <% @animals.each do |animal| %>
