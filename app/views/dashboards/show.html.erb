@@ -52,7 +52,11 @@
   <div class="request-cards">
     <% @animals.each do |animal| %>
       <% animal.locations.where(status: "Pending").each do |location| %>
-        <div class="card-animal">
+        <% if animal.photo.attached? %>
+          <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
+        <% else %>
+          <div class="card-animal">
+        <% end %>
             <p class="h2 name"><%= animal.name %></p>
             <p> By<%= location.user.first_name %></p>
             <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
@@ -68,7 +72,11 @@
   <div class="request-cards">
     <% @animals.each do |animal| %>
         <% animal.locations.where(status: "Accepted").each do |location| %>
+          <% if animal.photo.attached? %>
+          <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
+        <% else %>
           <div class="card-animal">
+        <% end %>
               <p class="h2 name"><%= animal.name %></p>
               <p> By <%= location.user.first_name %></p>
               <p class="h2 price"><%= animal.price_per_hour %>€/day</p>
@@ -82,7 +90,11 @@
   <div class="request-cards">
     <% @animals.each do |animal| %>
         <% animal.locations.where(status: "Declined").each do |location| %>
+          <% if animal.photo.attached? %>
+          <div class="card-animal" style="background-image: url('<%= cl_image_path animal.photo.key, height: 300, width: 300, crop: :fill %>')">
+          <% else %>
           <div class="card-animal">
+          <% end %>
               <p class="h2 name"><%= animal.name %></p>
               <p> By <%= location.user.first_name %></p>
               <p class="h2 price"><%= animal.price_per_hour %>€/day</p>
