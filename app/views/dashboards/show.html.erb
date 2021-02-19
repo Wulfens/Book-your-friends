@@ -32,7 +32,7 @@
         <% end %>
           <p class="h2 name"><%= animal.name %></p>
           <p class="h2 species"><%= animal.species %></p>
-          <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
+          <p class="h2 price"><%= animal.price_per_hour %>€/day</p>
         </div>
         <% end %>
       <% end %>
@@ -59,7 +59,7 @@
         <% end %>
             <p class="h2 name"><%= animal.name %></p>
             <p> By<%= location.user.first_name %></p>
-            <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
+            <p class="h2 price"><%= animal.price_per_hour %>€/day</p>
             <%= link_to "Accept", accept_location_path(location), method: :patch %>
             <%= link_to "Decline", decline_location_path(location), method: :patch %>
         </div>
