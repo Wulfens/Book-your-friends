@@ -54,7 +54,7 @@
       <% animal.locations.where(status: "Pending").each do |location| %>
         <div class="card-animal">
             <p class="h2 name"><%= animal.name %></p>
-            <p ><%= location.user.first_name %></p>
+            <p> By<%= location.user.first_name %></p>
             <p class="h2 price"><%= animal.price_per_hour %>€/h</p>
             <%= link_to "Accept", accept_location_path(location), method: :patch %>
             <%= link_to "Decline", decline_location_path(location), method: :patch %>
@@ -70,7 +70,7 @@
         <% animal.locations.where(status: "Accepted").each do |location| %>
           <div class="card-animal">
               <p class="h2 name"><%= animal.name %></p>
-              <p ><%= location.user.first_name %></p>
+              <p> By <%= location.user.first_name %></p>
               <p class="h2 price"><%= animal.price_per_hour %>€/day</p>
               <%= link_to "Decline", decline_location_path(location), method: :patch %>
           </div>
@@ -84,7 +84,7 @@
         <% animal.locations.where(status: "Declined").each do |location| %>
           <div class="card-animal">
               <p class="h2 name"><%= animal.name %></p>
-              <p ><%= location.user.first_name %></p>
+              <p> By <%= location.user.first_name %></p>
               <p class="h2 price"><%= animal.price_per_hour %>€/day</p>
           </div>
           <% end %>
@@ -96,49 +96,52 @@
 <% if current_user.locations != nil %>
 
   <% if current_user.locations.map(&:status).include? "Pending" %>
+    <h3>My pending bookings</h3>
+    <div class="my-pending-bookings">
     <% current_user.locations.each do |location| %>
       <% if location.status == "Pending" %>
-        <div class="my-pending-bookings">
-          <h3>My pending bookings</h3>
             <div class="card-location">
-              <p><%= location.start_date %></p>
-              <p><%= location.end_date %></p>
+              <p><strong><%= location.animal.name %></strong></p>
+              <p><%= location.start_date.strftime("%A - %d - %B") %></p>
+              <p><%= location.end_date.strftime("%A - %d - %B") %></p>
               <p><%= location.status %></p>
             </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
     
   <% if current_user.locations.map(&:status).include? "Accepted" %>
     <h3>My Accepted bookings</h3>
     <% current_user.locations.each do |location| %>
       <% if location.status == "Accepted" %>
-        <div class="my-declined-bookings">
+        <div class="my-pending-bookings">
             <div class="card-location">
-              <p><%= location.start_date %></p>
-              <p><%= location.end_date %></p>
+              <p><strong><%= location.animal.name %></strong></p>
+              <p><%= location.start_date.strftime("%A - %d - %B") %></p>
+              <p><%= location.end_date.strftime("%A - %d - %B") %></p>
               <p><%= location.status %></p>
               <%= link_to "Leave a review", new_location_review_path(location) %>
             </div>
-        </div>
         <% end %>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
   
   <% if current_user.locations.map(&:status).include? "Declined" %>
     <h3>My Declined bookings</h3>
     <% current_user.locations.each do |location| %>
       <% if location.status == "Declined" %>
-        <div class="my-declined-bookings">
+        <div class="my-pending-bookings">
             <div class="card-location">
-              <p><%= location.start_date %></p>
-              <p><%= location.end_date %></p>
+              <p><strong><%= location.animal.name %></strong></p>
+              <p><%= location.start_date.strftime("%A - %d - %B") %></p>
+              <p><%= location.end_date.strftime("%A - %d - %B") %></p>
               <p><%= location.status %></p>
             </div>
-        </div>
         <% end %>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 
 <% end %>
