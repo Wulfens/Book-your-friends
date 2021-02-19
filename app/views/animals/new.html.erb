@@ -1,11 +1,12 @@
-<h1>Add A Best Friend </h1>
-
+<h1 id="add-title">Add Your Friend </h1>
+<div class="create-form">
 <%= simple_form_for(@animal) do |f| %>
   <%= f.input :name %>
   <%= f.input :species %>
   <%= f.input :race %>
   <%= f.input :description %>
   <%= f.input :price_per_hour %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Add My Friend", class: "btn btn-primary" %>
+  <%= f.input :photo, as: :file%>
+  <%= f.submit "Add the animal", class: "btn-add" %>
 <% end %>
+</div>
