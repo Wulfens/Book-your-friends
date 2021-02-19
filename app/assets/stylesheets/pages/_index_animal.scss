@@ -12,6 +12,19 @@ body
 //   text-align: center;
 // }
 
+.container-top5 {
+  display: grid;
+  margin: 0 20%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}
 .container-cards-animals
 {
   display: flex;
