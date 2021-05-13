@@ -2,8 +2,6 @@
     <p class="welcome">Welcome, <strong> <%= current_user.first_name %> </strong></p>
 </div>
 
-<%# Coucou toi %>
-
 <div id="pic">
   <% if current_user.photo.attached? %>
     <%= cl_image_tag(current_user.photo.key,
