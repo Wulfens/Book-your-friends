@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :animals, dependent: :destroy
   has_many :locations
+
   has_many :rented_animals, through: :locations, source: :animal
   has_many :animals_required, through: :animals, source: :locations
   
