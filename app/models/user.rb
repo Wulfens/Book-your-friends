@@ -6,10 +6,11 @@ class User < ApplicationRecord
   has_many :animals, dependent: :destroy
   has_many :locations
 
-  has_many :rented_animals, through: :locations, source: :animal
-  has_many :animals_required, through: :animals, source: :locations
+  has_many :requested_bookings, through: :animals, source: :locations
+
+  # has_many :rented_animals, through: :locations, source: :animal
+  # has_many :animals_required, through: :animals, source: :locations
   
-  scope :pending, -> { where( status: "pending")}
 
   has_one_attached :photo
   has_one_attached :banner_photo
