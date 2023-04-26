@@ -4,4 +4,8 @@ class Location < ApplicationRecord
   has_one :review
   validates :start_date, presence: true
   validates :end_date, presence: true
+
+  scope :pending, -> { where( status: "pending")}
+  
+
 end
